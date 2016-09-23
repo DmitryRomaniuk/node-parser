@@ -1,0 +1,23 @@
+{
+  "name": "node-parser",
+  "version": "1.0.0",
+  "description": "simple node parser",
+  "main": "sever.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitryRomaniuk/node-parser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitryRomaniuk/node-parser/issues"
+  },
+  "homepage": "https://github.com/DmitryRomaniuk/node-parser#readme",
+  "dependencies": {
+    "htmlparser2": "^3.9.1",
+    "q": "^1.4.1"
+  }
+}
