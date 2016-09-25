@@ -15,11 +15,10 @@ var arr1=[];
 var pages = new Array(26);
 for (let i=0;i<pages.length;i++) {
     let j=i+1;
-    var currPage='/stations/top%2040/page'+j;
     var options = {
     hostname: 'www.internet-radio.com',
     port: 443,
-    path: currPage,
+    path: `/stations/top%2040/page${j}`,
     method: 'GET'
     };
 
