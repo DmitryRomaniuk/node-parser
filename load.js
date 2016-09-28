@@ -20,26 +20,26 @@ let promise = new Promise(function (resolve) {
 
 
 function callNextStep() {
+    console.log(arrRadio[i]);
     var url = arrRadio[i].match(/http:[^:]+/gi)[0];
     var port = arrRadio[i].match(/\d+$/gi)[0];
     url = url.match(/[^/]+$/gi)[0];
     var options = {
-    hostname: url,
-    port: port,
-    path: "/listen.pls",
-    method: 'GET'
+        hostname: url,
+        port: port,
+        path: "/listen.pls",
+        method: 'GET'
     };
 
     var req = http.request(options, (res) => {
         res.setEncoding('utf8');
         res.on('data', (chunk) => {
-                let bodyFile = chunk.toString();
-                fs.writeFile(`${url}.pls`, bodyFile, 'utf8', (err) => {
+            let bodyFile = chunk.toString();
+            fs.writeFile(`${url}.pls`, bodyFile, 'utf8', (err) => {
                     if (err) throw err;
-                    console.log(`${url}:${port} - It\'s saved!`);
-                    });
+            });
         });
-    res.on('end');
+        res.on('end',()=>{console.log(`${url}:${port} - It\'s saved!`);});
     });
 
     req.on('error', (e) => {
